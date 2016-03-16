@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3137D5E51C99E51300D893FC /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137D5E31C99E51300D893FC /* PreferencesViewController.swift */; };
 		3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */; };
 		3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCD1C98DE7B00859D11 /* Assets.xcassets */; };
 		3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCF1C98DE7B00859D11 /* MainMenu.xib */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3137D5E31C99E51300D893FC /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = Controllers/PreferencesViewController.swift; sourceTree = "<group>"; };
 		3160FBC81C98DE7B00859D11 /* Standup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3160FBCD1C98DE7B00859D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		3160FBCA1C98DE7B00859D11 /* Standup */ = {
 			isa = PBXGroup;
 			children = (
+				3137D5E31C99E51300D893FC /* PreferencesViewController.swift */,
 				3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */,
 				3160FBCD1C98DE7B00859D11 /* Assets.xcassets */,
 				3160FBCF1C98DE7B00859D11 /* MainMenu.xib */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */,
+				3137D5E51C99E51300D893FC /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +475,7 @@
 				3160FBED1C98DE7C00859D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3160FBEE1C98DE7C00859D11 /* Build configuration list for PBXNativeTarget "StandupTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +484,7 @@
 				3160FBF01C98DE7C00859D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3160FBF11C98DE7C00859D11 /* Build configuration list for PBXNativeTarget "StandupUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +493,7 @@
 				3160FBF31C98DE7C00859D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
