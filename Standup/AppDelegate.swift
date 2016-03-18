@@ -24,8 +24,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         promptScheduler.clearPrompts()
     }
-    
-    func sharedUser() -> User {
-        return user
-    }
 }
