@@ -13,24 +13,14 @@ protocol PromptSchedulerDelegate {
     func promptDidActivate(notification: NSUserNotification)
 }
 
-enum SittingStates : String {
-    case Sitting  = "sitting"
-    case Standing = "standing"
-    case Waiting  = "waiting"
-}
-
-class PromptScheduler: NSObject {
+class PromptScheduler: NSObject, HasUser {
     var delegate: PromptSchedulerDelegate?
-    
-    // Provide Singleton Access
-    static let sharedInstance = PromptScheduler()
-    private override init() {}
     
     /// Quick access to the default notification center
     let notificationCenter = NSUserNotificationCenter.defaultUserNotificationCenter()
-
-    /// Current Sitting State
-    var sittingState = SittingStates.Waiting
+    
+    /// Initialize User
+    lazy var user : User = self.getUser()
     
     /**
      Schedule the next prompt.
@@ -51,12 +41,12 @@ class PromptScheduler: NSObject {
     }
     
     func scheduleStandPrompt() {
-        sittingState = .Sitting
+        user.sittingState = .Sitting
         schedulePrompt(false)
     }
     
     func scheduleSitPrompt() {
-        sittingState = .Standing
+        user.sittingState = .Standing
         schedulePrompt(true)
     }
     
@@ -128,7 +118,7 @@ extension PromptScheduler: NSUserNotificationCenterDelegate {
     
     func userNotificationCenter(center: NSUserNotificationCenter,
         didDeliverNotification notification: NSUserNotification) {
-            sittingState = .Waiting
+            user.sittingState = .Waiting
     }
     
     /// Handle Notification Updates

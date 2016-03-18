@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, HasUser {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var sitItem: NSMenuItem!
     @IBOutlet weak var standItem: NSMenuItem!
@@ -19,7 +19,10 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     
     /// Application Prompt Scheduler
-    let promptScheduler = PromptScheduler.sharedInstance
+    let promptScheduler = PromptScheduler()
+
+    /// Initialize User
+    lazy var user : User = self.getUser()
     
     /// Set up Status Item on `awakeFromNib`
     override func awakeFromNib() {
@@ -34,11 +37,12 @@ class StatusMenuController: NSObject {
         }
     }
     
-    /// Schedule Prompt
+    /// Respond to sitItem click
     @IBAction func sitItemClicked(sender: NSMenuItem) {
         promptScheduler.scheduleSitPrompt()
     }
     
+    /// Respond to standItem click
     @IBAction func standItemClicked(sender: NSMenuItem) {
         promptScheduler.scheduleStandPrompt()
     }
@@ -48,9 +52,9 @@ class StatusMenuController: NSObject {
         NSApplication.sharedApplication().terminate(self)
     }
     
-    /// Update the Sit/Stand Label based on SittingStatus
+    /// Update menu item visibility based on user status
     func updateSitStandItem() {
-        switch promptScheduler.sittingState {
+        switch user.sittingState {
         case .Sitting:
             standItem.hidden = false
             sitItem.hidden = true

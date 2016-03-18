@@ -12,7 +12,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// Application Prompt Scheduler
-    let promptScheduler = PromptScheduler.sharedInstance
+    let promptScheduler = PromptScheduler()
+    let user = User()
 
     /// Initialize Application
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -22,5 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Clean up application
     func applicationWillTerminate(aNotification: NSNotification) {
         promptScheduler.clearPrompts()
+    }
+    
+    func sharedUser() -> User {
+        return user
     }
 }

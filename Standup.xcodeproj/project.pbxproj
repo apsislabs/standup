@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3136C1D11C9B7E8100C75A92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136C1D01C9B7E8100C75A92 /* User.swift */; };
 		3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */; };
 		3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCD1C98DE7B00859D11 /* Assets.xcassets */; };
 		3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCF1C98DE7B00859D11 /* MainMenu.xib */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3136C1D01C9B7E8100C75A92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3160FBC81C98DE7B00859D11 /* Standup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3160FBCD1C98DE7B00859D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */,
 				316C9AE51C9A350800AC940D /* PromptScheduler.swift */,
 				31CE185D1C9A45E9002ADA5D /* StatusMenuController.swift */,
+				3136C1D01C9B7E8100C75A92 /* User.swift */,
 				3160FBCF1C98DE7B00859D11 /* MainMenu.xib */,
 				3160FBCD1C98DE7B00859D11 /* Assets.xcassets */,
 				3160FBD21C98DE7B00859D11 /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3136C1D11C9B7E8100C75A92 /* User.swift in Sources */,
 				316C9AE61C9A350800AC940D /* PromptScheduler.swift in Sources */,
 				31CE185E1C9A45E9002ADA5D /* StatusMenuController.swift in Sources */,
 				3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */,
