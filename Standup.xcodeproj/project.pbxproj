@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3137D5E51C99E51300D893FC /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3137D5E31C99E51300D893FC /* PreferencesViewController.swift */; };
 		3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */; };
 		3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCD1C98DE7B00859D11 /* Assets.xcassets */; };
 		3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCF1C98DE7B00859D11 /* MainMenu.xib */; };
 		3160FBDC1C98DE7B00859D11 /* StandupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBDB1C98DE7B00859D11 /* StandupTests.swift */; };
 		3160FBE71C98DE7B00859D11 /* StandupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBE61C98DE7B00859D11 /* StandupUITests.swift */; };
+		316C9AE61C9A350800AC940D /* PromptScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9AE51C9A350800AC940D /* PromptScheduler.swift */; };
+		316C9AE81C9A362000AC940D /* Prompts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 316C9AE71C9A361F00AC940D /* Prompts.plist */; };
+		31CE185E1C9A45E9002ADA5D /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CE185D1C9A45E9002ADA5D /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3137D5E31C99E51300D893FC /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = Controllers/PreferencesViewController.swift; sourceTree = "<group>"; };
 		3160FBC81C98DE7B00859D11 /* Standup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3160FBCD1C98DE7B00859D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		3160FBE21C98DE7B00859D11 /* StandupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StandupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160FBE61C98DE7B00859D11 /* StandupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupUITests.swift; sourceTree = "<group>"; };
 		3160FBE81C98DE7B00859D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		316C9AE51C9A350800AC940D /* PromptScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptScheduler.swift; sourceTree = "<group>"; };
+		316C9AE71C9A361F00AC940D /* Prompts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Prompts.plist; sourceTree = "<group>"; };
+		31CE185D1C9A45E9002ADA5D /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +99,13 @@
 		3160FBCA1C98DE7B00859D11 /* Standup */ = {
 			isa = PBXGroup;
 			children = (
-				3137D5E31C99E51300D893FC /* PreferencesViewController.swift */,
 				3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */,
-				3160FBCD1C98DE7B00859D11 /* Assets.xcassets */,
+				316C9AE51C9A350800AC940D /* PromptScheduler.swift */,
+				31CE185D1C9A45E9002ADA5D /* StatusMenuController.swift */,
 				3160FBCF1C98DE7B00859D11 /* MainMenu.xib */,
+				3160FBCD1C98DE7B00859D11 /* Assets.xcassets */,
 				3160FBD21C98DE7B00859D11 /* Info.plist */,
+				316C9AE71C9A361F00AC940D /* Prompts.plist */,
 			);
 			path = Standup;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */,
+				316C9AE81C9A362000AC940D /* Prompts.plist in Resources */,
 				3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316C9AE61C9A350800AC940D /* PromptScheduler.swift in Sources */,
+				31CE185E1C9A45E9002ADA5D /* StatusMenuController.swift in Sources */,
 				3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */,
-				3137D5E51C99E51300D893FC /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
