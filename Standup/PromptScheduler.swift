@@ -106,9 +106,31 @@ class PromptScheduler: NSObject, HasUser {
     */
     func nextDeliveryDate() -> NSDate {
         let now = NSDate()
+        
+        let dndStartHour = userDefaults.integerForKey("DND_START_HOUR")
+        let dndEndHour = userDefaults.integerForKey("DND_END_HOUR")
         let promptInterval = userDefaults.integerForKey("PROMPT_INTERVAL")
         
-        return now.dateByAddingTimeInterval(Double(promptInterval))
+        let dndStartDate = NSDate().dateAtHour(dndStartHour)
+        var dndEndDate = NSDate().dateAtHour(dndEndHour)
+        
+        // If the end date is earlier than the start date, push
+        // end date into tomorrow.
+        if (dndStartDate.earlierDate(dndEndDate) == dndEndDate) {
+            dndEndDate = dndEndDate.dateByAddingDays(1)
+        }
+        
+        // Establish next scheduled date
+        var promptDate = now.dateByAddingMinutes(promptInterval)
+        
+        // Check if prompt time falls during do not disturb. If so
+        // then the next prompt date is actually the dnd end date,
+        // plus the prompt interval
+        if ( promptDate.isBetween(dndStartDate, endDate: dndEndDate) ) {
+            promptDate = dndEndDate.dateByAddingMinutes(promptInterval)
+        }
+        
+        return promptDate
     }
     
     /// Initialize User Defaults
