@@ -33,8 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         userDefaults.registerDefaults([
             "PROMPT_INTERVAL" : 45,
-            "DND_START_TIME"  : NSDate().dateAtHour(17),
-            "DND_END_TIME"    : NSDate().dateAtHour(5)
+            "DND_START_HOUR"  : 17,
+            "DND_END_HOUR"    : 9
         ])
     }
 }

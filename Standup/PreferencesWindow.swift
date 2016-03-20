@@ -36,9 +36,13 @@ class PreferencesWindow: NSWindowController {
     
     /// Load Defaults into Text Fields
     func loadDefaults() {
-        dndStartTimeInput.dateValue      = dateFromDefaults("DND_START_TIME")
-        dndEndTimeInput.dateValue        = dateFromDefaults("DND_END_TIME")
-        promptIntervalInput.integerValue = userDefaults.integerForKey("PROMPT_INTERVAL")
+        let dndStartHour = userDefaults.integerForKey("DND_START_HOUR")
+        let dndEndHour = userDefaults.integerForKey("DND_END_HOUR")
+        let promptInterval = userDefaults.integerForKey("PROMPT_INTERVAL")
+        
+        dndStartTimeInput.dateValue      = NSDate().dateAtHour(dndStartHour)
+        dndEndTimeInput.dateValue        = NSDate().dateAtHour(dndEndHour)
+        promptIntervalInput.integerValue = promptInterval
     }
     
     func savePreferences() {
@@ -47,8 +51,8 @@ class PreferencesWindow: NSWindowController {
         let dndEndTime = dndEndTimeInput.dateValue
         
         userDefaults.setInteger(promptInterval, forKey: "PROMPT_INTERVAL")
-        userDefaults.setObject(dndStartTime, forKey: "DND_START_TIME")
-        userDefaults.setObject(dndEndTime, forKey: "DND_END_TIME")
+        userDefaults.setInteger(dndStartTime.components().hour, forKey: "DND_START_HOUR")
+        userDefaults.setInteger(dndEndTime.components().hour, forKey: "DND_END_HOUR")
     }
 
     /// Initialize User Defaults
