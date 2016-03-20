@@ -20,6 +20,9 @@ class StatusMenuController: NSObject, HasUser {
     
     /// Application Prompt Scheduler
     let promptScheduler = PromptScheduler()
+    
+    /// Preferences Window
+    let preferencesWindow = PreferencesWindow()
 
     /// Initialize User
     lazy var user : User = self.getUser()
@@ -45,6 +48,11 @@ class StatusMenuController: NSObject, HasUser {
     /// Respond to standItem click
     @IBAction func standItemClicked(sender: NSMenuItem) {
         promptScheduler.scheduleStandPrompt()
+    }
+    
+    /// Respond to preferencesItem click
+    @IBAction func preferencesItemClick(sender: NSMenuItem) {
+        preferencesWindow.showWindow(nil)
     }
     
     /// Quit Application

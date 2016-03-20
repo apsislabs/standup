@@ -52,7 +52,11 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="fct-3s-sOF"/>
-                <menuItem title="Preferences" keyEquivalent="," id="5sg-QG-Qfy"/>
+                <menuItem title="Preferences" keyEquivalent="," id="5sg-QG-Qfy">
+                    <connections>
+                        <action selector="preferencesItemClick:" target="Jxe-Ka-5IV" id="6kL-Dy-clL"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" keyEquivalent="q" id="zC8-U3-zrW">
                     <connections>
                         <action selector="quitClicked:" target="Jxe-Ka-5IV" id="RYM-1G-Br3"/>

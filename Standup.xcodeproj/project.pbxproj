@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3136C1D11C9B7E8100C75A92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3136C1D01C9B7E8100C75A92 /* User.swift */; };
+		315AA25F1C9BA64400FCD592 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315AA25E1C9BA64400FCD592 /* PreferencesWindow.swift */; };
+		315AA2611C9BA67800FCD592 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315AA2601C9BA67800FCD592 /* PreferencesWindow.xib */; };
+		315AA2631C9BABE700FCD592 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315AA2621C9BABE700FCD592 /* NSDateExtension.swift */; };
+		315AA2651C9BB0B100FCD592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315AA2641C9BB0B100FCD592 /* Constants.swift */; };
 		3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */; };
 		3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCD1C98DE7B00859D11 /* Assets.xcassets */; };
 		3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3160FBCF1C98DE7B00859D11 /* MainMenu.xib */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		3136C1D01C9B7E8100C75A92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		315AA25E1C9BA64400FCD592 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		315AA2601C9BA67800FCD592 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		315AA2621C9BABE700FCD592 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		315AA2641C9BB0B100FCD592 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3160FBC81C98DE7B00859D11 /* Standup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Standup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3160FBCD1C98DE7B00859D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,11 +109,15 @@
 		3160FBCA1C98DE7B00859D11 /* Standup */ = {
 			isa = PBXGroup;
 			children = (
+				315AA2641C9BB0B100FCD592 /* Constants.swift */,
 				3160FBCB1C98DE7B00859D11 /* AppDelegate.swift */,
 				316C9AE51C9A350800AC940D /* PromptScheduler.swift */,
 				31CE185D1C9A45E9002ADA5D /* StatusMenuController.swift */,
 				3136C1D01C9B7E8100C75A92 /* User.swift */,
+				315AA25E1C9BA64400FCD592 /* PreferencesWindow.swift */,
+				315AA2621C9BABE700FCD592 /* NSDateExtension.swift */,
 				3160FBCF1C98DE7B00859D11 /* MainMenu.xib */,
+				315AA2601C9BA67800FCD592 /* PreferencesWindow.xib */,
 				3160FBCD1C98DE7B00859D11 /* Assets.xcassets */,
 				3160FBD21C98DE7B00859D11 /* Info.plist */,
 				316C9AE71C9A361F00AC940D /* Prompts.plist */,
@@ -235,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315AA2611C9BA67800FCD592 /* PreferencesWindow.xib in Resources */,
 				3160FBCE1C98DE7B00859D11 /* Assets.xcassets in Resources */,
 				316C9AE81C9A362000AC940D /* Prompts.plist in Resources */,
 				3160FBD11C98DE7B00859D11 /* MainMenu.xib in Resources */,
@@ -262,8 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315AA2631C9BABE700FCD592 /* NSDateExtension.swift in Sources */,
 				3136C1D11C9B7E8100C75A92 /* User.swift in Sources */,
+				315AA25F1C9BA64400FCD592 /* PreferencesWindow.swift in Sources */,
 				316C9AE61C9A350800AC940D /* PromptScheduler.swift in Sources */,
+				315AA2651C9BB0B100FCD592 /* Constants.swift in Sources */,
 				31CE185E1C9A45E9002ADA5D /* StatusMenuController.swift in Sources */,
 				3160FBCC1C98DE7B00859D11 /* AppDelegate.swift in Sources */,
 			);

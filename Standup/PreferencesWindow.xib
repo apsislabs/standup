@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="Standup" customModuleProvider="target">
+            <connections>
+                <outlet property="dndEndTimeInput" destination="csL-Z6-vyR" id="hjf-EM-kPA"/>
+                <outlet property="dndStartTimeInput" destination="Bmx-qh-DMr" id="Nn9-wW-Xn0"/>
+                <outlet property="promptIntervalInput" destination="7H5-Xr-TeL" id="b5U-MN-cSV"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="TBZ-by-n6V"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="391" height="95"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="391" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-qh-DMr">
+                        <rect key="frame" x="151" y="52" width="97" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="Xny-ke-4fQ"/>
+                        </constraints>
+                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="yIS-Su-bve">
+                            <font key="font" metaFont="system"/>
+                            <date key="date" timeIntervalSinceReferenceDate="-595897200">
+                                <!--1982-02-13 01:00:00 +0000-->
+                            </date>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
+                        </datePickerCell>
+                    </datePicker>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0ui-nQ-ine">
+                        <rect key="frame" x="18" y="55" width="127" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Do not disturb from:" id="3UO-dG-aqC">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="csL-Z6-vyR">
+                        <rect key="frame" x="277" y="52" width="97" height="27"/>
+                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="iN8-R3-qVH">
+                            <font key="font" metaFont="system"/>
+                            <date key="date" timeIntervalSinceReferenceDate="-595926000">
+                                <!--1982-02-12 17:00:00 +0000-->
+                            </date>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
+                        </datePickerCell>
+                    </datePicker>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-Lm-jQQ">
+                        <rect key="frame" x="251" y="55" width="20" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="to:" id="F8J-y9-dvt">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-PR-vWE">
+                        <rect key="frame" x="56" y="23" width="89" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Prompt every:" id="7e2-KY-cp0">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-Xr-TeL">
+                        <rect key="frame" x="151" y="20" width="60" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="796-nF-uRR"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="45" placeholderString="" drawsBackground="YES" id="01v-K6-Ycb">
+                            <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Yff-tF-TOR">
+                                <real key="minimum" value="5"/>
+                                <real key="maximum" value="100"/>
+                            </numberFormatter>
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-K9-aPe">
+                        <rect key="frame" x="217" y="23" width="53" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="minutes" id="0bM-eb-YNV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Bmx-qh-DMr" firstAttribute="baseline" secondItem="zGp-Lm-jQQ" secondAttribute="baseline" id="Boq-xS-TiI"/>
+                    <constraint firstItem="GLj-K9-aPe" firstAttribute="baseline" secondItem="7H5-Xr-TeL" secondAttribute="baseline" id="HIf-vf-t53"/>
+                    <constraint firstAttribute="trailing" secondItem="csL-Z6-vyR" secondAttribute="trailing" constant="20" symbolic="YES" id="Hh0-kC-IWS"/>
+                    <constraint firstItem="7H5-Xr-TeL" firstAttribute="baseline" secondItem="xgW-PR-vWE" secondAttribute="baseline" id="JaU-Cl-cmE"/>
+                    <constraint firstItem="GLj-K9-aPe" firstAttribute="leading" secondItem="7H5-Xr-TeL" secondAttribute="trailing" constant="8" symbolic="YES" id="RKG-RU-S63"/>
+                    <constraint firstItem="7H5-Xr-TeL" firstAttribute="leading" secondItem="xgW-PR-vWE" secondAttribute="trailing" constant="8" symbolic="YES" id="U8S-xm-sYv"/>
+                    <constraint firstItem="0ui-nQ-ine" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="a5b-WH-J0j"/>
+                    <constraint firstItem="zGp-Lm-jQQ" firstAttribute="baseline" secondItem="csL-Z6-vyR" secondAttribute="baseline" id="b8X-hV-GVh"/>
+                    <constraint firstItem="0ui-nQ-ine" firstAttribute="baseline" secondItem="Bmx-qh-DMr" secondAttribute="baseline" id="bQE-Hi-pMV"/>
+                    <constraint firstAttribute="bottom" secondItem="7H5-Xr-TeL" secondAttribute="bottom" constant="20" symbolic="YES" id="cD7-Q6-RvM"/>
+                    <constraint firstItem="7H5-Xr-TeL" firstAttribute="leading" secondItem="Bmx-qh-DMr" secondAttribute="leading" id="cim-gt-MPH"/>
+                    <constraint firstItem="Bmx-qh-DMr" firstAttribute="leading" secondItem="0ui-nQ-ine" secondAttribute="trailing" constant="8" symbolic="YES" id="djT-wa-wem"/>
+                    <constraint firstItem="Bmx-qh-DMr" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="fWA-dt-aSr"/>
+                    <constraint firstItem="zGp-Lm-jQQ" firstAttribute="leading" secondItem="Bmx-qh-DMr" secondAttribute="trailing" constant="8" symbolic="YES" id="zDv-y9-x09"/>
+                    <constraint firstItem="csL-Z6-vyR" firstAttribute="leading" secondItem="zGp-Lm-jQQ" secondAttribute="trailing" constant="8" symbolic="YES" id="zNM-jD-hR7"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="rEe-bs-Dwk"/>
+            </connections>
+            <point key="canvasLocation" x="396.5" y="387.5"/>
+        </window>
+    </objects>
+</document>
