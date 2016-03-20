@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PreferencesWindow: NSWindowController, NSWindowDelegate {
+class PreferencesWindow: NSWindowController {
     @IBOutlet weak var dndStartTimeInput: NSDatePicker!;
     @IBOutlet weak var dndEndTimeInput: NSDatePicker!;
     @IBOutlet weak var promptIntervalInput: NSTextField!;
@@ -25,14 +25,13 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
+        // Well this is dumb
+        self.window?.level = Int(CGWindowLevelForKey(CGWindowLevelKey.FloatingWindowLevelKey))
+        
         self.window?.makeKeyAndOrderFront(nil)
         self.window?.center()
         
         loadDefaults()
-    }
-    
-    func windowWillClose(notification: NSNotification) {
-        savePreferences()
     }
     
     /// Load Defaults into Text Fields
@@ -64,5 +63,11 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
     /// Retrieve an optionally null date field from NSUserDefaults
     private func dateFromDefaults(key: String) -> NSDate? {
         return userDefaults.objectForKey(key) as! NSDate?
+    }
+}
+
+extension PreferencesWindow : NSWindowDelegate {
+    func windowWillClose(notification: NSNotification) {
+        savePreferences()
     }
 }
