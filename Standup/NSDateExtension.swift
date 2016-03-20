@@ -9,6 +9,7 @@
 import Foundation
 
 public extension NSDate {
+    /// Returns a new `NSDate` by adding days
     func dateByAddingDays(days: Int) -> NSDate {
         let dateComp = NSDateComponents()
         dateComp.day = days
@@ -17,6 +18,7 @@ public extension NSDate {
             .dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
     }
     
+    /// Returns a new `NSDate` by adding minutes
     func dateByAddingMinutes(minutes: Int) -> NSDate {
         let dateComp = NSDateComponents()
         dateComp.minute = minutes
@@ -25,6 +27,7 @@ public extension NSDate {
             .dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
     }
     
+    /// Returns a new `NSDate` at the given hour
     func dateAtHour(hour: NSInteger) -> NSDate {
         let components = self.components()
 
@@ -35,12 +38,39 @@ public extension NSDate {
         return NSCalendar.currentCalendar().dateFromComponents(components)!
     }
     
+    /// Determines whether the date object falls between two other date objects.
     func isBetween(startDate: NSDate, endDate: NSDate) -> Bool {
-        if earlierDate(startDate) == startDate && laterDate(endDate) == endDate {
-            return true
+        var between = false
+        
+        // Reassign variables to be mutable
+        var currentTime = self
+        var endTime     = endDate
+        var startTime   = startDate
+        
+        // Increment current time if it's before the end date
+        if currentTime.earlierDate(endTime) == currentTime {
+            currentTime = currentTime.dateByAddingDays(1)
         }
         
-        return false
+        // Increment the start time if it's before the end date
+        if startTime.earlierDate(endTime) == startTime {
+            startTime = startTime.dateByAddingDays(1)
+        }
+        
+        // Is current time after the startTime?
+        if currentTime.laterDate(startTime) == currentTime {
+            
+            if currentTime.laterDate(endTime) == currentTime {
+                endTime = endTime.dateByAddingDays(1)
+            }
+            
+            // And also before the end time?
+            if currentTime.laterDate(endTime) == endTime {
+                between = true
+            }
+        }
+        
+        return between
     }
     
     // MARK: Class Functions

@@ -112,13 +112,7 @@ class PromptScheduler: NSObject, HasUser {
         let promptInterval = userDefaults.integerForKey("PROMPT_INTERVAL")
         
         let dndStartDate = NSDate().dateAtHour(dndStartHour)
-        var dndEndDate = NSDate().dateAtHour(dndEndHour)
-        
-        // If the end date is earlier than the start date, push
-        // end date into tomorrow.
-        if (dndStartDate.earlierDate(dndEndDate) == dndEndDate) {
-            dndEndDate = dndEndDate.dateByAddingDays(1)
-        }
+        let dndEndDate = NSDate().dateAtHour(dndEndHour)
         
         // Establish next scheduled date
         var promptDate = now.dateByAddingMinutes(promptInterval)
