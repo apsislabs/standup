@@ -35,6 +35,14 @@ public extension NSDate {
         return NSCalendar.currentCalendar().dateFromComponents(components)!
     }
     
+    func isBetween(startDate: NSDate, endDate: NSDate) -> Bool {
+        if earlierDate(startDate) == startDate && laterDate(endDate) == endDate {
+            return true
+        }
+        
+        return false
+    }
+    
     // MARK: Class Functions
     
     class func tomorrow() -> NSDate {
