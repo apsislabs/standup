@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PROMPT_INTERVAL</key>
+	<integer>45</integer>
+	<key>DND_START_HOUR</key>
+	<integer>17</integer>
+	<key>DND_END_HOUR</key>
+	<integer>9</integer>
+</dict>
+</plist>

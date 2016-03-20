@@ -36,13 +36,9 @@ class PreferencesWindow: NSWindowController {
     
     /// Load Defaults into Text Fields
     func loadDefaults() {
-        let promptInterval = userDefaults.integerForKey("PROMPT_INTERVAL")
-        let dndStartTime = dateFromDefaults("DND_START_TIME")
-        let dndEndTime = dateFromDefaults("DND_END_TIME")
-        
-        dndStartTimeInput.dateValue      =  dndStartTime ?? K.APP_DEFAULTS.DND_START_TIME
-        dndEndTimeInput.dateValue        =  dndEndTime ?? K.APP_DEFAULTS.DND_END_TIME
-        promptIntervalInput.integerValue =  promptInterval > 0 ? promptInterval : K.APP_DEFAULTS.PROMPT_INTERVAL
+        dndStartTimeInput.dateValue      = dateFromDefaults("DND_START_TIME")
+        dndEndTimeInput.dateValue        = dateFromDefaults("DND_END_TIME")
+        promptIntervalInput.integerValue = userDefaults.integerForKey("PROMPT_INTERVAL")
     }
     
     func savePreferences() {
@@ -61,8 +57,8 @@ class PreferencesWindow: NSWindowController {
     }
     
     /// Retrieve an optionally null date field from NSUserDefaults
-    private func dateFromDefaults(key: String) -> NSDate? {
-        return userDefaults.objectForKey(key) as! NSDate?
+    private func dateFromDefaults(key: String) -> NSDate {
+        return userDefaults.objectForKey(key) as! NSDate
     }
 }
 

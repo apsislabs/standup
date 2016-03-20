@@ -17,11 +17,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     /// Initialize Application
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        loadDefaultPrefs()
+
         promptScheduler.scheduleStandPrompt()
     }
     
     /// Clean up application
     func applicationWillTerminate(aNotification: NSNotification) {
         promptScheduler.clearPrompts()
+    }
+    
+    /// Load default preferences
+    func loadDefaultPrefs() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        userDefaults.registerDefaults([
+            "PROMPT_INTERVAL" : 45,
+            "DND_START_TIME"  : NSDate().dateAtHour(17),
+            "DND_END_TIME"    : NSDate().dateAtHour(5)
+        ])
     }
 }

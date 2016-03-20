@@ -22,6 +22,9 @@ class PromptScheduler: NSObject, HasUser {
     /// Initialize User
     lazy var user : User = self.getUser()
     
+    /// User Defaults
+    lazy var userDefaults : NSUserDefaults = self.initUserDefaults()
+    
     /**
      Schedule the next prompt.
      
@@ -103,9 +106,14 @@ class PromptScheduler: NSObject, HasUser {
     */
     func nextDeliveryDate() -> NSDate {
         let now = NSDate()
-        let interval = Double(10)
+        let promptInterval = userDefaults.integerForKey("PROMPT_INTERVAL")
         
-        return now.dateByAddingTimeInterval(interval)
+        return now.dateByAddingTimeInterval(Double(promptInterval))
+    }
+    
+    /// Initialize User Defaults
+    func initUserDefaults() -> NSUserDefaults {
+        return NSUserDefaults.standardUserDefaults()
     }
 }
 
